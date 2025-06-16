@@ -1,0 +1,18 @@
+# .github/workflows/auto-post.yml
+name: Auto Post to Social
+on:
+  push:
+    paths: ['products/products.json'] # Corrected path
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install requests # Assuming 'requests' is the only dependency for the script
+      - name: Generate LinkedIn post
+        run: python scripts/generate-post.py
