@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "name": "Морская соль Сиамский залив",
+      "price_thb": "20-28",
+      "price_usd": "0.55-0.77",
+      "shipping_pallet": "180-500",
+      "margin": "150-300%",
+      "origin": "Thailand",
+      "photo": "salt-packages.jpg"
+    },
+    {
+      "name": "Продукт из вашего фото (145 THB)",
+      "price_thb": "145",
+      "price_usd": "4.00",
+      "shipping_pallet": "200-400",
+      "margin": "200-400%",
+      "origin": "Thailand",
+      "photo": "product-145.jpg"
+    }
+  ]
+}
