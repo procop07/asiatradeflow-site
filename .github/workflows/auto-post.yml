@@ -2,17 +2,33 @@
 name: Auto Post to Social
 on:
   push:
-    paths: ['products/products.json'] # Corrected path
+    paths: ['products/products.json']
 jobs:
   post:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: List files in workspace
+        run: |
+          echo "Listing files in GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+          ls -R
+          echo "-------------------------------------------"
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install requests # Assuming 'requests' is the only dependency for the script
+        run: pip install requests
+      - name: Display content of products.json
+        run: |
+          echo "Attempting to display products.json..."
+          if [ -f "products/products.json" ]; then
+            echo "File content of products/products.json:"
+            cat products/products.json
+            echo "" # Newline for better log readability
+          else
+            echo "products/products.json not found!"
+          fi
+          echo "-------------------------------------------"
       - name: Generate LinkedIn post
         run: python scripts/generate-post.py
