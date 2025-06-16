@@ -1,19 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AsiaTradeFlow - Товары из ЮВА</title>
     <link>https://asiatradeflow.com</link>
-    <description>Новые находки товаров с расчётом логистики</description>
+    <description>Новые находки товаров из ЮВА с расчётом логистики и импортными возможностями.</description>
+    <language>ru</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate> <!-- Jekyll variable, will be static if not using Jekyll -->
     <atom:link href="https://asiatradeflow.com/feed.xml" rel="self" type="application/rss+xml" />
-    <!-- Items will be added here, potentially dynamically by Jekyll or a script -->
-    <!-- Example item:
+    <image>
+      <url>https://asiatradeflow.com/images/logo.png</url> <!-- Add a logo image later -->
+      <title>AsiaTradeFlow Logo</title>
+      <link>https://asiatradeflow.com</link>
+    </image>
+
+    <!-- Manually added items based on current products.json -->
+    <!-- Item 1: Coarse Sea Salt -->
     <item>
-      <title>Example Product Title</title>
-      <link>https://asiatradeflow.com/products/example-product.html</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://asiatradeflow.com/products/example-product.html</guid>
-      <description>Description of the example product.</description>
+      <title>Новинка: Крупная морская соль - Сиамский залив</title>
+      <link>https://asiatradeflow.com/products/thai-coarse-salt.html</link> <!-- Placeholder link to product page -->
+      <pubDate>Mon, 29 Jul 2024 10:00:00 +0000</pubDate> <!-- Example date, update as needed -->
+      <guid isPermaLink="true">https://asiatradeflow.com/products/thai-coarse-salt.html#TSS001</guid>
+      <category>Thai Sea Salt</category>
+      <description>
+        <![CDATA[
+        🌊 Откройте для себя крупную морскую соль из Сиамского залива! 🇹🇭
+        Идеально для кулинарии и помола.
+
+        🔹 Продукт: Крупная морская соль
+        🔹 Происхождение: Таиланд, Сиамский залив
+        🔹 Цена (кг): 20-25 THB / $0.55-0.69 USD
+        🔹 Мин. заказ: 1000 кг
+        🔹 Упаковка: мешки 25/50кг, биг-бэги 1т
+
+        🚚 Рассчитайте доставку в Москву, Берлин, Париж, Лондон, Лос-Анджелес, Алматы на нашем сайте!
+        Маржа: 150-250%. Сертификаты GMP, HACCP.
+
+        ➡️ Узнайте больше: https://asiatradeflow.com/products/thai-coarse-salt.html
+        #AsiaTradeFlow #ИмпортТаиланд #МорскаяСоль #ОптоваяТорговля #Логистика
+        ]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+        <p><img src="https://asiatradeflow.com/images/thai-coarse-salt.jpg" alt="Крупная морская соль" /></p>
+        <p><strong>🌊 Откройте для себя крупную морскую соль из Сиамского залива! 🇹🇭</strong></p>
+        <p>Натуральная крупная морская соль, собранная в чистых водах Сиамского залива. Идеально подходит для мельниц и широкого кулинарного применения.</p>
+        <ul>
+          <li><strong>Продукт:</strong> Крупная морская соль (Coarse Sea Salt - Gulf of Thailand)</li>
+          <li><strong>Категория:</strong> Thai Sea Salt</li>
+          <li><strong>Происхождение:</strong> Таиланд, побережье Сиамского залива</li>
+          <li><strong>Цена за кг (EXW):</strong> 20-25 THB (примерно $0.55-0.69 USD)</li>
+          <li><strong>Минимальный заказ:</strong> 1000 кг</li>
+          <li><strong>Варианты упаковки:</strong> мешки по 25 кг, мешки по 50 кг, джамбо-бэги по 1 тонне</li>
+          <li><strong>Сертификаты:</strong> GMP, HACCP</li>
+        </ul>
+        <p><strong>Логистика:</strong> Стоимость доставки за паллету (1000 кг) в основные города (USD):</p>
+        <ul>
+          <li>Москва: $480</li>
+          <li>Берлин: $420</li>
+          <li>Париж: $450</li>
+          <li>Лондон: $460</li>
+          <li>Лос-Анджелес: $500</li>
+          <li>Алматы: $350</li>
+        </ul>
+        <p><strong>Ориентировочная маржа:</strong> 150-250%</p>
+        <p>Рассчитайте полную стоимость с доставкой с помощью нашего <a href="https://asiatradeflow.com/calculator/calculator.html">калькулятора логистики</a>.</p>
+        <p>Для получения дополнительной информации и размещения заказа, пожалуйста, <a href="https://asiatradeflow.com/contact.html">свяжитесь с нами</a>.</p>
+        <p><em>#AsiaTradeFlow #ИмпортТаиланд #МорскаяСоль #Таиланд #ОптоваяТорговля #Логистика #ТоварыИзАзии</em></p>
+        ]]>
+      </content:encoded>
     </item>
-    -->
+
+    <!-- Item 2: Fine Sea Salt -->
+    <item>
+      <title>Новинка: Мелкая морская соль - Сиамский залив</title>
+      <link>https://asiatradeflow.com/products/thai-fine-salt.html</link> <!-- Placeholder link -->
+      <pubDate>Mon, 29 Jul 2024 10:05:00 +0000</pubDate> <!-- Example date -->
+      <guid isPermaLink="true">https://asiatradeflow.com/products/thai-fine-salt.html#TSS002</guid>
+      <category>Thai Sea Salt</category>
+      <description>
+        <![CDATA[
+        ✨ Представляем мелкую морскую соль из Таиланда! 🇹🇭
+        Отлично подходит для столового использования и пищевого производства.
+
+        🔹 Продукт: Мелкая морская соль
+        🔹 Происхождение: Таиланд, Сиамский залив
+        🔹 Цена (кг): 23-28 THB / $0.63-0.77 USD
+        🔹 Мин. заказ: 500 кг
+        🔹 Упаковка: розничные пакеты 1кг, мешки 25/50кг
+
+        🚢 Прозрачный расчет логистики в ваш город доступен на сайте.
+        Маржа: 180-300%. Сертификаты GMP, HACCP, Органик (отдельные партии).
+
+        ➡️ Подробности: https://asiatradeflow.com/products/thai-fine-salt.html
+        #AsiaTradeFlow #ThaiSalt #FineSeaSalt #ImportExport #BusinessOpportunity
+        ]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+        <p><img src="https://asiatradeflow.com/images/thai-fine-salt.jpg" alt="Мелкая морская соль" /></p>
+        <p><strong>✨ Представляем мелкую морскую соль из Таиланда! 🇹🇭</strong></p>
+        <p>Мелкозернистая морская соль из Сиамского залива, идеально подходящая для столового использования и пищевого производства.</p>
+        <ul>
+          <li><strong>Продукт:</strong> Мелкая морская соль (Fine Sea Salt - Gulf of Thailand)</li>
+          <li><strong>Категория:</strong> Thai Sea Salt</li>
+          <li><strong>Происхождение:</strong> Таиланд, побережье Сиамского залива</li>
+          <li><strong>Цена за кг (EXW):</strong> 23-28 THB (примерно $0.63-0.77 USD)</li>
+          <li><strong>Минимальный заказ:</strong> 500 кг</li>
+          <li><strong>Варианты упаковки:</strong> розничные пакеты по 1 кг, мешки по 25 кг, мешки по 50 кг</li>
+          <li><strong>Сертификаты:</strong> GMP, HACCP, Органик (отдельные партии)</li>
+        </ul>
+        <p><strong>Логистика:</strong> Стоимость доставки за паллету (1000 кг) в основные города (USD):</p>
+        <ul>
+          <li>Москва: $480</li>
+          <li>Берлин: $420</li>
+          <!-- ... other cities ... -->
+        </ul>
+        <p><strong>Ориентировочная маржа:</strong> 180-300%</p>
+        <p>Посетите наш <a href="https://asiatradeflow.com/calculator/calculator.html">калькулятор логистики</a> для детального расчета.</p>
+        <p><em>#AsiaTradeFlow #ThaiSalt #FineSeaSalt #ImportExport #BusinessOpportunity #SEAProducts</em></p>
+        ]]>
+      </content:encoded>
+    </item>
+
+    <!-- Item 3: Fleur de Sel -->
+    <item>
+      <title>Эксклюзив: Флёр де Сель - Андаманское побережье</title>
+      <link>https://asiatradeflow.com/products/thai-fleur-de-sel.html</link> <!-- Placeholder link -->
+      <pubDate>Mon, 29 Jul 2024 10:10:00 +0000</pubDate> <!-- Example date -->
+      <guid isPermaLink="true">https://asiatradeflow.com/products/thai-fleur-de-sel.html#TSS003</guid>
+      <category>Premium Thai Sea Salt</category>
+      <description>
+        <![CDATA[
+        💎 Откройте Флёр де Сель с Андаманского побережья Таиланда! 🇹🇭
+        Премиальная соль ручной сборки для гурманов.
+
+        🔹 Продукт: Флёр де Сель (Fleur de Sel - Andaman Coast)
+        🔹 Цена (кг): 120-150 THB / $3.30-4.15 USD
+        🔹 Мин. заказ: 50 кг
+        🔹 Упаковка: баночки 250г, пакеты 500г/1кг
+
+        🌏 Доставка по всему миру. Узнайте стоимость для вашего города!
+        Маржа: 200-400%. Ремесленный продукт.
+
+        ➡️ Детали и заказ: https://asiatradeflow.com/products/thai-fleur-de-sel.html
+        #AsiaTradeFlow #FleurDeSel #PremiumSalt #ArtisanalSalt #Gourmet #ThailandProducts
+        ]]>
+      </description>
+      <content:encoded>
+        <![CDATA[
+        <p><img src="https://asiatradeflow.com/images/thai-fleur-de-sel.jpg" alt="Флёр де Сель" /></p>
+        <p><strong>💎 Откройте Флёр де Сель с Андаманского побережья Таиланда! 🇹🇭</strong></p>
+        <p>Нежная Флёр де Сель, собранная вручную на побережье Андаманского моря. Премиальная финишная соль для истинных ценителей.</p>
+        <ul>
+          <li><strong>Продукт:</strong> Флёр де Сель (Fleur de Sel - Andaman Coast)</li>
+          <li><strong>Категория:</strong> Premium Thai Sea Salt</li>
+          <li><strong>Происхождение:</strong> Таиланд, Андаманское побережье</li>
+          <li><strong>Цена за кг (EXW):</strong> 120-150 THB (примерно $3.30-4.15 USD)</li>
+          <li><strong>Минимальный заказ:</strong> 50 кг</li>
+          <li><strong>Варианты упаковки:</strong> баночки по 250г, пакеты по 500г, пакеты по 1кг</li>
+          <li><strong>Сертификаты:</strong> Ремесленный продукт, доступны опции Fair Trade</li>
+        </ul>
+        <p><strong>Логистика:</strong> Стоимость доставки за паллету (500 кг) в основные города (USD):</p>
+        <ul>
+          <li>Москва: $300</li>
+          <li>Берлин: $250</li>
+          <!-- ... other cities ... -->
+        </ul>
+        <p><strong>Ориентировочная маржа:</strong> 200-400%</p>
+        <p>Рассчитайте полную стоимость с доставкой в <a href="https://asiatradeflow.com/calculator/calculator.html">нашем калькуляторе</a>.</p>
+        <p><em>#AsiaTradeFlow #FleurDeSel #PremiumSalt #ArtisanalSalt #Gourmet #ThailandProducts #LuxuryFood</em></p>
+        ]]>
+      </content:encoded>
+    </item>
+
   </channel>
 </rss>

@@ -1,0 +1,92 @@
+/* Styles for calculator.html */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the main content */
+}
+
+.calculator-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004d40; /* Dark Teal from main style */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button#calculate-btn {
+    background-color: #007bff; /* Blue from main style */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button#calculate-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.results-container {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e0f7fa; /* Light cyan, similar to hero */
+    border: 1px solid #b2ebf2; /* Lighter border */
+    border-radius: 5px;
+}
+
+.results-container h3 {
+    margin-top: 0;
+    color: #004d40;
+}
+
+.results-container p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333; /* Dark footer */
+    color: white;
+    margin-top: auto;
+}
+footer a {
+    color: #87ceeb; /* Sky blue for links in footer */
+}

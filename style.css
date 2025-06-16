@@ -1,13 +1,13 @@
 /* Basic styling for AsiaTradeFlow */
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* AliceBlue */
     color: #333;
 }
 
 header {
-    background-color: #007bff;
+    background: linear-gradient(to right, #007bff, #0056b3);
     color: white;
     padding: 1em 0;
     text-align: center;
@@ -15,19 +15,52 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 2em; /* Adjusted for better visual hierarchy */
 }
 
-.products, .calculator {
-    padding: 1em;
+header p {
+    font-size: 1.1em; /* Adjusted for better visual hierarchy */
+}
+
+.hero {
+    background-color: #e0f7fa; /* Light cyan */
+    color: #333;
+    padding: 1.5em;
+    text-align: center;
+    margin: 1em 0; /* Added margin for separation */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #004d40; /* Dark teal */
+}
+
+a {
+    color: #007bff; /* Standard blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+.products, .calculator, .rss-subscribe {
+    padding: 1.5em;
     margin: 1em;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added subtle shadow for depth */
 }
 
 .product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 1.5em; /* Increased gap for better spacing */
 }
 
 .product-card {
@@ -35,15 +68,68 @@ header h1 {
     padding: 1em;
     border-radius: 4px;
     background-color: #fff;
-    flex-basis: calc(33.333% - 2em); /* Adjust for gap */
+    flex-basis: calc(33.333% - 1.5em); /* Adjusted for increased gap */
     box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Added subtle shadow */
 }
 
 .product-card h3 {
     margin-top: 0;
+    color: #004d40; /* Dark teal, consistent with other headings */
 }
 
 .margin {
     font-weight: bold;
     color: green;
+}
+
+.main-nav {
+    text-align: center;
+    padding: 0.5em 0;
+    background-color: rgba(0, 0, 0, 0.05); /* Light background for nav */
+}
+.main-nav a {
+    color: #0056b3; /* Darker blue for nav links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjusted breakpoint for tablets */
+    .product-card {
+        flex-basis: calc(50% - 1.5em); /* Two cards per row */
+    }
+}
+
+@media (max-width: 768px) { /* Kept this for smaller tablets/large phones */
+    header h1 {
+        font-size: 1.8em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .product-card {
+        flex-basis: calc(50% - 1em); /* Adjusted gap consideration for this breakpoint */
+    }
+}
+
+@media (max-width: 576px) { /* Adjusted breakpoint for mobile phones */
+    header h1 {
+        font-size: 1.5em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .product-card {
+        flex-basis: 100%; /* One card per row */
+        margin-bottom: 1em; /* Add margin for stacked cards */
+    }
+    .products, .calculator, .rss-subscribe {
+        padding: 1em;
+        margin: 0.5em;
+    }
 }

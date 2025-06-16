@@ -1,22 +1,77 @@
 {
   "products": [
     {
-      "name": "Морская соль Сиамский залив",
-      "price_thb": "20-28",
-      "price_usd": "0.55-0.77",
-      "shipping_pallet": "180-500",
-      "margin": "150-300%",
-      "origin": "Thailand",
-      "photo": "salt-packages.jpg"
+      "id": "TSS001",
+      "name": "Coarse Sea Salt - Gulf of Thailand",
+      "category": "Thai Sea Salt",
+      "description": "Natural coarse sea salt, harvested from the pristine waters of the Gulf of Thailand. Ideal for grinders and culinary use.",
+      "price_thb_per_kg": "20-25",
+      "price_usd_per_kg": "0.55-0.69",
+      "packaging_options": ["25kg bags", "50kg bags", "1-ton jumbo bags"],
+      "min_order_quantity_kg": 1000,
+      "pallet_capacity_kg": 1000, // Assuming 1 ton per pallet
+      "shipping_cost_per_pallet_usd": {
+        "Moscow": 480,
+        "Berlin": 420,
+        "Paris": 450,
+        "London": 460,
+        "Los_Angeles": 500,
+        "Almaty": 350
+      },
+      "margin_percentage": "150-250%",
+      "origin": "Thailand, Gulf Coast",
+      "certifications": ["GMP", "HACCP"],
+      "photo": "images/thai-coarse-salt.jpg" // Example path, ensure images dir is planned
     },
     {
-      "name": "Продукт из вашего фото (145 THB)",
-      "price_thb": "145",
-      "price_usd": "4.00",
-      "shipping_pallet": "200-400",
-      "margin": "200-400%",
-      "origin": "Thailand",
-      "photo": "product-145.jpg"
+      "id": "TSS002",
+      "name": "Fine Sea Salt - Gulf of Thailand",
+      "category": "Thai Sea Salt",
+      "description": "Fine grain sea salt from the Gulf of Thailand, perfect for table use and food manufacturing.",
+      "price_thb_per_kg": "23-28",
+      "price_usd_per_kg": "0.63-0.77",
+      "packaging_options": ["1kg retail bags", "25kg bags", "50kg bags"],
+      "min_order_quantity_kg": 500,
+      "pallet_capacity_kg": 1000,
+      "shipping_cost_per_pallet_usd": {
+        "Moscow": 480,
+        "Berlin": 420,
+        "Paris": 450,
+        "London": 460,
+        "Los_Angeles": 500,
+        "Almaty": 350
+      },
+      "margin_percentage": "180-300%",
+      "origin": "Thailand, Gulf Coast",
+      "certifications": ["GMP", "HACCP", "Organic (selected batches)"],
+      "photo": "images/thai-fine-salt.jpg" // Example path
+    },
+    {
+      "id": "TSS003",
+      "name": "Fleur de Sel - Andaman Coast",
+      "category": "Premium Thai Sea Salt",
+      "description": "Delicate Fleur de Sel, hand-harvested from the Andaman Sea coast. A premium finishing salt.",
+      "price_thb_per_kg": "120-150", // Higher price for premium
+      "price_usd_per_kg": "3.30-4.15",
+      "packaging_options": ["250g jars", "500g pouches", "1kg pouches"],
+      "min_order_quantity_kg": 50,
+      "pallet_capacity_kg": 500, // Smaller pallet capacity due to value/packaging
+      "shipping_cost_per_pallet_usd": { // Might be different for smaller/specialized pallets
+        "Moscow": 300,
+        "Berlin": 250,
+        "Paris": 270,
+        "London": 280,
+        "Los_Angeles": 320,
+        "Almaty": 200
+      },
+      "margin_percentage": "200-400%",
+      "origin": "Thailand, Andaman Coast",
+      "certifications": ["Artisanal Product", "Fair Trade options available"],
+      "photo": "images/thai-fleur-de-sel.jpg" // Example path
     }
-  ]
+  ],
+  "meta": {
+    "currency_info": "THB prices are ex-works. USD prices are approximate based on exchange rate at time of listing.",
+    "shipping_info": "Shipping costs are estimates per standard pallet (typically 1000kg, unless specified) and can vary based on exact weight, volume, and current freight rates. Please request a custom quote for precise calculations."
+  }
 }
