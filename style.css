@@ -1,20 +1,21 @@
 /* Basic Reset/Normalization */
 body, h1, h2, h3, div, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* margin: 0; */ /* Removed for Bootstrap */
+    /* padding: 0; */ /* Removed for Bootstrap */
+    box-sizing: border-box; /* Keep */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f2f5; /* Light grey background, similar to LinkedIn */
-    color: #333;
+    font-family: Arial, sans-serif; /* Keep if Arial is specifically preferred */
+    /* line-height: 1.6; */ /* Removed for Bootstrap */
+    /* background-color: #f0f2f5; */ /* Removed - Handled by .bg-light */
+    /* color: #333; */ /* Removed for Bootstrap */
 }
 
-/* Header Styling */
+/* Header Styling - REMOVED as Bootstrap handles this */
+/*
 header {
-    background-color: #0077b5; /* LinkedIn blue */
+    background-color: #0077b5;
     color: white;
     padding: 1rem 0;
     text-align: center;
@@ -24,24 +25,30 @@ header {
 header h1 {
     font-size: 2rem;
 }
+*/
 
-/* Main Content Container */
+/* Main Content Container - REMOVED as Bootstrap handles this */
+/*
 main {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 2rem; /* Space for footer */
+    padding-bottom: 2rem;
 }
+*/
 
-/* Product Feed (#product-feed) basic grid layout */
+/* Product Feed (#product-feed) basic grid layout - REMOVED as Bootstrap handles this */
+/*
 #product-feed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 1.5rem; /* Spacing between cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
+*/
 
-/* Product Card (.product-card) basic styling */
+/* Product Card (.product-card) basic styling - REMOVED as Bootstrap handles this */
+/*
 .product-card {
     background-color: white;
     border: 1px solid #ddd;
@@ -52,7 +59,7 @@ main {
 
 .product-card h3 {
     font-size: 1.2rem;
-    color: #0077b5; /* Blue for product names */
+    color: #0077b5;
     margin-bottom: 0.5rem;
 }
 
@@ -71,13 +78,15 @@ main {
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
 }
+*/
 
-.hashtags {
-    font-size: 0.8rem;
-    color: #555;
+.hashtags { /* Kept for specific font sizing if needed */
+    font-size: 0.8rem; /* Keep if this specific size is desired for hashtags */
+    /* color: #555; */ /* Removed - Handled by .text-muted in HTML */
 }
 
-/* Contact Section (#contact-section) basic styling */
+/* Contact Section (#contact-section) basic styling - REMOVED as Bootstrap handles this */
+/*
 #contact-section {
     background-color: white;
     border: 1px solid #ddd;
@@ -110,8 +119,10 @@ main {
 #contact-section a:hover {
     text-decoration: underline;
 }
+*/
 
-/* Responsive Design (Basic Media Query) */
+/* Responsive Design (Basic Media Query) - REMOVED as Bootstrap handles this */
+/*
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
@@ -122,6 +133,7 @@ main {
     }
 
     #product-feed {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr;
     }
 }
+*/
