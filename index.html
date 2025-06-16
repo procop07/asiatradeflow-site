@@ -4,7 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AsiaTradeFlow - Product Discovery</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+/* Basic Reset/Normalization */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f3f4f6; /* New background color */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #2563eb; /* New header blue */
+    color: white;
+    padding: 1.5rem 0; /* Adjusted padding */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.75rem; /* Base font size for mobile */
+}
+
+/* Main Content Container */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto; /* Added top margin, centered */
+    padding: 0 0 2rem 0; /* Adjusted padding, keep bottom for footer spacing */
+}
+
+/* Product Feed (#product-feed) */
+#product-feed {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile by default */
+    gap: 1.5rem; /* Spacing between cards */
+    margin-bottom: 2rem; /* Space before contact section */
+}
+
+/* Product Card (.product-card) styling */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.25rem; /* 20px */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle drop shadow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    /* Removed color: #0077b5; to use default text color or inherit */
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card ul {
+    list-style: none; /* Remove default list styling */
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+.product-card ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-card .hashtags { /* More specific selector if needed */
+    font-size: 0.8rem;
+    color: #6b7280; /* Muted color for hashtags */
+    margin-top: 1rem; /* Add some space above hashtags */
+}
+
+/* Contact Section (#contact-section) styling */
+#contact-section {
+    text-align: center; /* Center the heading */
+    padding-top: 2rem; /* Spacing from the cards above */
+    padding-bottom: 2rem; /* Spacing at the bottom of the page */
+}
+
+#contact-section h2 {
+    font-size: 1.5rem;
+    /* Removed color and margin-bottom as it's just a heading */
+}
+
+/* Responsive Design (Desktop adjustments) */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Larger font size for desktop header */
+    }
+
+    #product-feed {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+    }
+}
+
+/* Responsive Design (Smaller Mobile adjustments - optional) */
+@media (max-width: 480px) {
+    main {
+        width: 95%; /* More width for very small screens */
+    }
+
+    .product-card {
+        padding: 1rem; /* Slightly reduce padding on very small screens */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Further adjust header font if needed */
+    }
+}
+    </style>
 </head>
 <body>
     <header>
@@ -12,8 +133,8 @@
     </header>
     <main>
         <!-- Product prices in USD are approximate and based on exchange rates: 1 USD = 36 THB, 1 USD = 25000 VND, 1 USD = 4.7 MYR. Last checked December 26, 2023. -->
-        <div id="product-feed">
-            <div class="product-card">
+        <section id="product-feed">
+            <article class="product-card">
                 <h3>📦 Thai Sea Salt from Gulf of Thailand</h3>
                 <p><strong>💰 Price:</strong> 20-28 THB → $0.56 - $0.78 USD (approx.)</p>
                 <p><strong>🚢 Shipping options:</strong></p>
@@ -24,8 +145,8 @@
                 </ul>
                 <p>🌿 Sustainably harvested</p>
                 <p class="hashtags">#AsiaTradeFlow #Thailand #Import #SeaSalt</p>
-            </div>
-            <div class="product-card">
+            </article>
+            <article class="product-card">
                 <h3>📦 Vietnamese Coffee Beans from Vietnam</h3>
                 <p><strong>💰 Price:</strong> 45,000-65,000 VND/kg → $1.80 - $2.60 USD/kg (approx.)</p>
                 <p><strong>🚢 Shipping options:</strong></p>
@@ -36,8 +157,8 @@
                 </ul>
                 <p>🌿 Organic & Fair Trade options available</p>
                 <p class="hashtags">#AsiaTradeFlow #Vietnam #Import #Coffee</p>
-            </div>
-            <div class="product-card">
+            </article>
+            <article class="product-card">
                 <h3>📦 Malaysian Palm Oil Products from Malaysia</h3>
                 <p><strong>💰 Price:</strong> 12-18 MYR → $2.55 - $3.83 USD (approx.)</p>
                 <p><strong>🚢 Shipping options:</strong></p>
@@ -48,8 +169,8 @@
                 </ul>
                 <p>🌿 RSPO Certified options</p>
                 <p class="hashtags">#AsiaTradeFlow #Malaysia #Import #PalmOil</p>
-            </div>
-            <div class="product-card">
+            </article>
+            <article class="product-card">
                 <h3>📦 Thai Coconut Products from Thailand</h3>
                 <p><strong>💰 Price:</strong> 30-50 THB → $0.83 - $1.39 USD (approx.)</p>
                 <p><strong>🚢 Shipping options:</strong></p>
@@ -60,20 +181,13 @@
                 </ul>
                 <p>🌿 Ethically sourced</p>
                 <p class="hashtags">#AsiaTradeFlow #Thailand #Import #Coconut</p>
-            </div>
-        </div>
+            </article>
+        </section>
     </main>
     <footer>
-        <div id="contact-section">
+        <section id="contact-section">
             <h2>Contact Us</h2>
-            <ul>
-                <li>LinkedIn: <a href="https://linkedin.com/in/kutemov" target="_blank">linkedin.com/in/kutemov</a></li>
-                <li>WhatsApp: +66-094-551-9860</li>
-                <li>Email: <a href="mailto:kutemov@gmail.com">kutemov@gmail.com</a></li>
-                <li>WeChat/Line: procop07</li>
-                <li>Telegram: procop077</li>
-            </ul>
-        </div>
+        </section>
     </footer>
 </body>
 </html>
