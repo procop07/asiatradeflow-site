@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultCurrency = 'USD'; // Calculations will be primarily in USD
 
     // Fetch product data
-    fetch('../products/products.json')
+    fetch('./products/products.json')
         .then(response => response.json())
         .then(data => {
             productsData = data.products;

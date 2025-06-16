@@ -9,6 +9,7 @@
     <meta name="keywords" content="AsiaTradeFlow, Southeast Asia, SEA, product discovery, logistics, shipping calculator, Thai sea salt, import, export, trade">
     <meta name="author" content="AsiaTradeFlow">
     <link rel="canonical" href="https://asiatradeflow.com/">
+    <link rel="stylesheet" href="calculator/calculator.css">
 </head>
 <body>
     <header>
@@ -57,13 +58,46 @@
     </section>
 
     <section class="calculator">
-        <h2>Interactive Shipping Calculator</h2>
-        <p>Our interactive shipping calculator is coming soon! <a href='./calculator/shipping.html'>Try the beta version here.</a></p>
+        <div class="calculator-container"> <!-- This class is styled by calculator.css -->
+            <h2>Interactive Shipping Calculator</h2> <!-- Adapted heading -->
+
+            <div class="form-group">
+                <label for="product-select">Выберите продукт:</label>
+                <select id="product-select" name="product"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Количество (кг):</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1000">
+            </div>
+
+            <div class="form-group">
+                <label for="destination-select">Выберите город назначения:</label>
+                <select id="destination-select" name="destination"></select>
+            </div>
+
+            <button id="calculate-btn">Рассчитать</button>
+
+            <div id="results-container" class="results-container" style="display:none;">
+                <h3>Результаты расчёта:</h3>
+                <p id="product-name-result"></p>
+                <p id="quantity-result"></p>
+                <p id="destination-result"></p>
+                <hr>
+                <p id="product-cost-result"></p>
+                <p id="shipping-cost-result"></p>
+                <p id="total-landed-cost-result"></p>
+                <hr>
+                <p id="cost-per-unit-result"></p>
+                <small id="disclaimer-result"></small>
+            </div>
+        </div>
     </section>
 
     <section class="rss-subscribe">
         <h2>Stay Updated</h2>
         <p>Subscribe to our RSS feed to get the latest product discoveries and logistics insights: <a href='./feed.xml' target='_blank'>Subscribe to RSS Feed</a></p>
     </section>
+    <script src="calculator/calculator.js"></script>
 </body>
 </html>
