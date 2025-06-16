@@ -1,0 +1,185 @@
+/* Basic Reset & Body Styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Light gray background for the page */
+    padding: 20px; /* Add some padding around the whole page */
+}
+
+.container {
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the content */
+    padding: 0 15px; /* Padding for the container */
+}
+
+/* Header Styles */
+header {
+    background-color: #5dade2; /* Light blue background */
+    color: #ffffff; /* White text */
+    padding: 1.5rem 0; /* Vertical and horizontal padding */
+    text-align: center;
+    margin-bottom: 30px; /* Space below the header */
+    border-radius: 8px; /* Slightly rounded corners for the header */
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* Product Feed Styles */
+.product-feed {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: 25px; /* Space between cards */
+    margin-bottom: 30px;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 25px;
+    margin-bottom: 0; /* Remove margin-bottom if gap is used in grid */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card effect shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Product Card Content Styles */
+.product-card h2 {
+    font-size: 1.6rem; /* Product name size */
+    color: #2c3e50; /* Darker blue-gray for product name */
+    margin-bottom: 12px;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #27ae60; /* Green color for price */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-card .shipping-info h3,
+.product-card .sustainability h3 {
+    font-size: 1.1rem;
+    color: #34495e; /* Slightly lighter dark blue-gray */
+    margin-bottom: 8px;
+}
+
+.product-card .shipping-info ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.product-card .shipping-info ul li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.product-card .sustainability p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.product-card .hashtags {
+    margin-top: 15px;
+}
+
+.product-card .hashtags span {
+    display: inline-block;
+    background-color: #ecf0f1; /* Light gray background for hashtags */
+    color: #3498db; /* Blue text for hashtags */
+    padding: 6px 12px;
+    border-radius: 15px; /* Pill shape */
+    margin-right: 8px;
+    margin-bottom: 8px; /* In case they wrap */
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Contact Block Styles */
+.contact-block {
+    background-color: #34495e; /* Contrasting dark blue-gray */
+    color: #ffffff; /* White text */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-block ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.contact-block ul li a {
+    color: #5dade2; /* Light blue for links, matching header */
+    text-decoration: none;
+}
+
+.contact-block ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design - Mobile-First Approach */
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 30px; /* More padding for tablets */
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-feed {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    .product-card h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .product-feed {
+        grid-template-columns: repeat(2, 1fr); /* Still 2 columns for this layout, but could be 3 or 4 */
+                                               /* Based on the previous HTML, 2 columns seems appropriate for the content. */
+    }
+
+    .product-card {
+        padding: 30px; /* Slightly more padding for larger cards */
+    }
+}
+
+/* Accessibility: Focus Visible for keyboard navigation */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #5dade2;
+    outline-offset: 2px;
+}

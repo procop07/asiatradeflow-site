@@ -3,77 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AsiaTradeFlow - Product Discovery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AsiaTradeFlow</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <header>
-        <h1>AsiaTradeFlow - Southeast Asia Product Discovery</h1>
-    </header>
-    <main>
-        <!-- Product prices in USD are approximate and based on exchange rates: 1 USD = 36 THB, 1 USD = 25000 VND, 1 USD = 4.7 MYR. Last checked December 26, 2023. -->
-        <div id="product-feed">
-            <div class="product-card">
-                <h3>📦 Thai Sea Salt from Gulf of Thailand</h3>
-                <p><strong>💰 Price:</strong> 20-28 THB → $0.56 - $0.78 USD (approx.)</p>
-                <p><strong>🚢 Shipping options:</strong></p>
-                <ul>
-                    <li>Pallet (500+ units): $200-500 to major cities</li>
-                    <li>Box (30kg): $50-80 express, $20-40 sea freight</li>
-                    <li>Samples (1-5 units): $25/kg DHL</li>
-                </ul>
-                <p>🌿 Sustainably harvested</p>
-                <p class="hashtags">#AsiaTradeFlow #Thailand #Import #SeaSalt</p>
-            </div>
-            <div class="product-card">
-                <h3>📦 Vietnamese Coffee Beans from Vietnam</h3>
-                <p><strong>💰 Price:</strong> 45,000-65,000 VND/kg → $1.80 - $2.60 USD/kg (approx.)</p>
-                <p><strong>🚢 Shipping options:</strong></p>
-                <ul>
-                    <li>Pallet (500+ units): $200-500 to major cities</li>
-                    <li>Box (30kg): $50-80 express, $20-40 sea freight</li>
-                    <li>Samples (1-5 units): $25/kg DHL</li>
-                </ul>
-                <p>🌿 Organic & Fair Trade options available</p>
-                <p class="hashtags">#AsiaTradeFlow #Vietnam #Import #Coffee</p>
-            </div>
-            <div class="product-card">
-                <h3>📦 Malaysian Palm Oil Products from Malaysia</h3>
-                <p><strong>💰 Price:</strong> 12-18 MYR → $2.55 - $3.83 USD (approx.)</p>
-                <p><strong>🚢 Shipping options:</strong></p>
-                <ul>
-                    <li>Pallet (500+ units): $200-500 to major cities</li>
-                    <li>Box (30kg): $50-80 express, $20-40 sea freight</li>
-                    <li>Samples (1-5 units): $25/kg DHL</li>
-                </ul>
-                <p>🌿 RSPO Certified options</p>
-                <p class="hashtags">#AsiaTradeFlow #Malaysia #Import #PalmOil</p>
-            </div>
-            <div class="product-card">
-                <h3>📦 Thai Coconut Products from Thailand</h3>
-                <p><strong>💰 Price:</strong> 30-50 THB → $0.83 - $1.39 USD (approx.)</p>
-                <p><strong>🚢 Shipping options:</strong></p>
-                <ul>
-                    <li>Pallet (500+ units): $200-500 to major cities</li>
-                    <li>Box (30kg): $50-80 express, $20-40 sea freight</li>
-                    <li>Samples (1-5 units): $25/kg DHL</li>
-                </ul>
-                <p>🌿 Ethically sourced</p>
-                <p class="hashtags">#AsiaTradeFlow #Thailand #Import #Coconut</p>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div id="contact-section">
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>AsiaTradeFlow – Southeast Asia Product Discovery</h1>
+        </header>
+
+        <!-- Product Feed Section -->
+        <main class="product-feed">
+            <!-- Product Card 1: Thai Sea Salt -->
+            <article class="product-card">
+                <h2>📦 Thai Sea Salt from Gulf of Thailand</h2>
+                <p class="price">💰 20-28 THB → XX USD</p>
+                <div class="shipping-info">
+                    <h3>🚢 Shipping:</h3>
+                    <ul>
+                        <li>Pallet (500+ units): $200-500 major cities</li>
+                        <li>Box (30 kg): $50-80 air, $20-40 sea</li>
+                        <li>Samples (1-5 units): $25 / kg DHL</li>
+                    </ul>
+                </div>
+                <div class="sustainability">
+                    <h3>🌿 Sustainability features:</h3>
+                    <p>Sustainable and ethically sourced.</p>
+                </div>
+                <div class="hashtags">
+                    <span>#AsiaTradeFlow</span>
+                    <span>#Thailand</span>
+                    <span>#Import</span>
+                </div>
+            </article>
+
+            <!-- Product Card 2: Vietnamese Coffee Beans -->
+            <article class="product-card">
+                <h2>📦 Vietnamese Coffee Beans</h2>
+                <p class="price">💰 45-65 VND → XX USD</p> <!-- Assuming VND is Vietnamese Dong, might need clarification if it's 45k-65k -->
+                <div class="shipping-info">
+                    <h3>🚢 Shipping:</h3>
+                    <ul>
+                        <li>Pallet (500+ units): $200-500 major cities</li>
+                        <li>Box (30 kg): $50-80 air, $20-40 sea</li>
+                        <li>Samples (1-5 units): $25 / kg DHL</li>
+                    </ul>
+                </div>
+                <div class="sustainability">
+                    <h3>🌿 Sustainability features:</h3>
+                    <p>Sustainable and ethically sourced.</p>
+                </div>
+                <div class="hashtags">
+                    <span>#AsiaTradeFlow</span>
+                    <span>#Vietnam</span>
+                    <span>#Import</span>
+                </div>
+            </article>
+
+            <!-- Product Card 3: Malaysian Palm Oil Products -->
+            <article class="product-card">
+                <h2>📦 Malaysian Palm Oil Products</h2>
+                <p class="price">💰 12-18 MYR → XX USD</p>
+                <div class="shipping-info">
+                    <h3>🚢 Shipping:</h3>
+                    <ul>
+                        <li>Pallet (500+ units): $200-500 major cities</li>
+                        <li>Box (30 kg): $50-80 air, $20-40 sea</li>
+                        <li>Samples (1-5 units): $25 / kg DHL</li>
+                    </ul>
+                </div>
+                <div class="sustainability">
+                    <h3>🌿 Sustainability features:</h3>
+                    <p>Sustainable and ethically sourced.</p>
+                </div>
+                <div class="hashtags">
+                    <span>#AsiaTradeFlow</span>
+                    <span>#Malaysia</span>
+                    <span>#Import</span>
+                </div>
+            </article>
+
+            <!-- Product Card 4: Thai Coconut Products -->
+            <article class="product-card">
+                <h2>📦 Thai Coconut Products</h2>
+                <p class="price">💰 30-50 THB → XX USD</p>
+                <div class="shipping-info">
+                    <h3>🚢 Shipping:</h3>
+                    <ul>
+                        <li>Pallet (500+ units): $200-500 major cities</li>
+                        <li>Box (30 kg): $50-80 air, $20-40 sea</li>
+                        <li>Samples (1-5 units): $25 / kg DHL</li>
+                    </ul>
+                </div>
+                <div class="sustainability">
+                    <h3>🌿 Sustainability features:</h3>
+                    <p>Sustainable and ethically sourced.</p>
+                </div>
+                <div class="hashtags">
+                    <span>#AsiaTradeFlow</span>
+                    <span>#Thailand</span>
+                    <span>#Import</span>
+                </div>
+            </article>
+        </main>
+
+        <!-- Contact Block Section -->
+        <footer class="contact-block">
             <h2>Contact Us</h2>
             <ul>
                 <li>LinkedIn: <a href="https://linkedin.com/in/kutemov" target="_blank">linkedin.com/in/kutemov</a></li>
                 <li>WhatsApp: +66-094-551-9860</li>
                 <li>Email: <a href="mailto:kutemov@gmail.com">kutemov@gmail.com</a></li>
-                <li>WeChat/Line: procop07</li>
+                <li>WeChat / Line: procop07</li>
                 <li>Telegram: procop077</li>
             </ul>
-        </div>
-    </footer>
+        </footer>
+    </div> <!-- /.container -->
 </body>
 </html>
