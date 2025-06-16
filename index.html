@@ -9,7 +9,100 @@
     <meta name="keywords" content="AsiaTradeFlow, Southeast Asia, SEA, product discovery, logistics, shipping calculator, Thai sea salt, import, export, trade">
     <meta name="author" content="AsiaTradeFlow">
     <link rel="canonical" href="https://asiatradeflow.com/">
-    <link rel="stylesheet" href="calculator/calculator.css">
+    <style type="text/css">
+    /* Styles for calculator.html */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex-grow: 1;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto; /* Center the main content */
+    }
+
+    .calculator-container {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #004d40; /* Dark Teal from main style */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group select,
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button#calculate-btn {
+        background-color: #007bff; /* Blue from main style */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button#calculate-btn:hover {
+        background-color: #0056b3; /* Darker blue */
+    }
+
+    .results-container {
+        margin-top: 25px;
+        padding: 20px;
+        background-color: #e0f7fa; /* Light cyan, similar to hero */
+        border: 1px solid #b2ebf2; /* Lighter border */
+        border-radius: 5px;
+    }
+
+    .results-container h3 {
+        margin-top: 0;
+        color: #004d40;
+    }
+
+    .results-container p {
+        margin: 8px 0;
+        font-size: 1.1em;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #333; /* Dark footer */
+        color: white;
+        margin-top: auto;
+    }
+    footer a {
+        color: #87ceeb; /* Sky blue for links in footer */
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -98,6 +191,131 @@
         <h2>Stay Updated</h2>
         <p>Subscribe to our RSS feed to get the latest product discoveries and logistics insights: <a href='./feed.xml' target='_blank'>Subscribe to RSS Feed</a></p>
     </section>
-    <script src="calculator/calculator.js"></script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+    const productSelect = document.getElementById('product-select');
+    const quantityInput = document.getElementById('quantity');
+    const destinationSelect = document.getElementById('destination-select');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const resultsContainer = document.getElementById('results-container');
+
+    const productNameResult = document.getElementById('product-name-result');
+    const quantityResult = document.getElementById('quantity-result');
+    const destinationResult = document.getElementById('destination-result');
+    const productCostResult = document.getElementById('product-cost-result');
+    const shippingCostResult = document.getElementById('shipping-cost-result');
+    const totalLandedCostResult = document.getElementById('total-landed-cost-result');
+    const costPerUnitResult = document.getElementById('cost-per-unit-result');
+    const disclaimerResult = document.getElementById('disclaimer-result');
+
+    let productsData = [];
+    const defaultCurrency = 'USD'; // Calculations will be primarily in USD
+
+    // Fetch product data
+    fetch('./products/products.json')
+        .then(response => response.json())
+        .then(data => {
+            productsData = data.products;
+            populateProductSelect(productsData);
+            // Populate destinations based on the first product initially
+            if (productsData.length > 0) {
+                populateDestinationSelect(productsData[0]);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching products.json:', error);
+            resultsContainer.innerHTML = '<p>Ошибка загрузки данных о продуктах. Пожалуйста, попробуйте позже.</p>';
+            resultsContainer.style.display = 'block';
+        });
+
+    function populateProductSelect(products) {
+        products.forEach(product => {
+            const option = document.createElement('option');
+            option.value = product.id;
+            option.textContent = product.name;
+            productSelect.appendChild(option);
+        });
+        // Add event listener to update destinations when product changes
+        productSelect.addEventListener('change', (event) => {
+            const selectedProduct = productsData.find(p => p.id === event.target.value);
+            if (selectedProduct) {
+                populateDestinationSelect(selectedProduct);
+            }
+        });
+    }
+
+    function populateDestinationSelect(product) {
+        // Clear previous options
+        destinationSelect.innerHTML = '';
+        if (product.shipping_cost_per_pallet_usd) {
+            Object.keys(product.shipping_cost_per_pallet_usd).forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                // Replace underscores with spaces for display
+                option.textContent = city.replace(/_/g, ' ');
+                destinationSelect.appendChild(option);
+            });
+        }
+    }
+
+    calculateBtn.addEventListener('click', () => {
+        const selectedProductId = productSelect.value;
+        const quantity = parseFloat(quantityInput.value);
+        const destination = destinationSelect.value;
+
+        if (!selectedProductId || isNaN(quantity) || quantity <= 0 || !destination) {
+            alert('Пожалуйста, выберите продукт, укажите корректное количество и выберите город назначения.');
+            return;
+        }
+
+        const product = productsData.find(p => p.id === selectedProductId);
+        if (!product) {
+            alert('Выбранный продукт не найден.');
+            return;
+        }
+
+        // --- Calculation Logic ---
+        // Product Cost
+        // Using the higher end of the USD price range for calculation.
+        // Example: "0.55-0.69" -> use 0.69
+        const priceRangeParts = product.price_usd_per_kg.split('-');
+        const productPricePerKg = parseFloat(priceRangeParts[priceRangeParts.length - 1]);
+        if (isNaN(productPricePerKg)) {
+            alert('Ошибка в данных о цене продукта.');
+            return;
+        }
+        const totalProductCost = productPricePerKg * quantity;
+
+        // Shipping Cost
+        const palletCapacityKg = product.pallet_capacity_kg || 1000; // Default if not specified
+        const shippingCostPerPallet = product.shipping_cost_per_pallet_usd[destination];
+
+        if (typeof shippingCostPerPallet === 'undefined') {
+             alert('Стоимость доставки для выбранного города не найдена.');
+             return;
+        }
+
+        const numberOfPallets = Math.ceil(quantity / palletCapacityKg);
+        const totalShippingCost = numberOfPallets * shippingCostPerPallet;
+
+        // Total Landed Cost
+        const totalLandedCost = totalProductCost + totalShippingCost;
+        const costPerUnit = totalLandedCost / quantity;
+
+        // Display results
+        productNameResult.textContent = `Продукт: ${product.name}`;
+        quantityResult.textContent = `Количество: ${quantity} кг`;
+        destinationResult.textContent = `Город назначения: ${destination.replace(/_/g, ' ')}`;
+
+        productCostResult.textContent = `Общая стоимость товара: $${totalProductCost.toFixed(2)} USD`;
+        shippingCostResult.textContent = `Ориентировочная стоимость доставки: $${totalShippingCost.toFixed(2)} USD (${numberOfPallets} паллет(ы))`;
+        totalLandedCostResult.textContent = `ИТОГО (товар + доставка): $${totalLandedCost.toFixed(2)} USD`;
+        costPerUnitResult.innerHTML = `<strong>Ориентировочная стоимость за кг (с доставкой): $${costPerUnit.toFixed(2)} USD/кг</strong>`;
+
+        disclaimerResult.textContent = 'Примечание: Все расчеты являются ориентировочными и основаны на стандартных условиях. Фактическая стоимость может отличаться. Свяжитесь с нами для получения точного расчета.';
+        resultsContainer.style.display = 'block';
+    });
+});
+    </script>
 </body>
 </html>
